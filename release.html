@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Release Tasks &mdash; scikits.umfpack 0.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="scikits.umfpack 0.2.3 documentation" href="index.html" />
+    <link rel="prev" title="Development" href="develop.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="develop.html" title="Development"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">scikits.umfpack 0.2.3 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="release-tasks">
+<h1>Release Tasks<a class="headerlink" href="#release-tasks" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Setup <a class="reference external" href="https://pypi.python.org/pypi">pypi</a> and <a class="reference external" href="https://testpypi.python.org/pypi">testpypi</a> accounts if you do not already have ones. Then
+put the following into your <tt class="docutils literal"><span class="pre">~/.pypirc</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[distutils]
+    pypi
+    testpypi
+
+[pypi]
+repository = https://pypi.python.org/pypi
+username = your_pypi_name
+password = your_pypi_password
+
+[testpypi]
+repository = https://testpypi.python.org/pypi
+username = your_testpypi_name
+password = your_testpypi_password
+</pre></div>
+</div>
+<p>Then register your accounts:</p>
+<div class="highlight-python"><div class="highlight"><pre># testpypi
+python setup.py register -r https://testpypi.python.org/pypi
+
+# pypi
+python setup.py register
+</pre></div>
+</div>
+<p>To be able to upload to pypi/testpypi without sending your password in plain
+text, install <a class="reference external" href="https://pypi.python.org/pypi/twine">twine</a>. An upload is then done simply by:</p>
+<div class="highlight-python"><div class="highlight"><pre># testpypi
+twine upload -r testpypi &lt;filenames&gt;
+
+# pypi
+twine upload &lt;filenames&gt; # Be careful!
+</pre></div>
+</div>
+<p><strong>WARNING:</strong> Uploads to <a class="reference external" href="https://pypi.python.org/pypi">pypi</a> are permanent and cannot be updated later! If
+a wrong file is uploaded, the only fix is to create a new release. Always
+use <a class="reference external" href="https://testpypi.python.org/pypi">testpypi</a> first.</p>
+</li>
+<li><p class="first">Make sure that <a class="reference external" href="https://pypi.python.org/pypi/pypandoc">pypandoc</a> is installed so that Markdown to ReST conversion
+of <tt class="docutils literal"><span class="pre">README.md</span></tt> in <tt class="docutils literal"><span class="pre">setup.py</span></tt> works.</p>
+</li>
+<li><p class="first">Bump version number:</p>
+<ul class="simple">
+<li>in <tt class="docutils literal"><span class="pre">setup.py</span></tt></li>
+<li>in <tt class="docutils literal"><span class="pre">docs/conf.py</span></tt></li>
+</ul>
+</li>
+<li><p class="first">Regenerate and review the documentation:</p>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py build_ext -i build_sphinx
+firefox build/sphinx/html/index.html
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install and test the git version that is to be released. In the git
+repository, do:</p>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py install --user
+cd ..
+nosetests -v scikits.umfpack
+cd scikit-umfpack
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create a source distribution tarball, install it and test it:</p>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py sdist
+# unpack it, cd to it, then:
+python setup.py install --user
+cd ..
+nosetests -v scikits.umfpack
+</pre></div>
+</div>
+</li>
+<li><p class="first">Upload to <a class="reference external" href="https://testpypi.python.org/pypi">testpypi</a> and test:</p>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py sdist
+twine upload -r testpypi dist/scikit-umfpack-&lt;version&gt;.tar.gz
+</pre></div>
+</div>
+<p>Note: if the upload fails with <cite>This filename has previously been used, you
+should use a different version.</cite>, just change the version in <tt class="docutils literal"><span class="pre">setup.py</span></tt>
+to another value.</p>
+<p>Create a test install using <a class="reference external" href="https://virtualenv.pypa.io">virtualenv</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd tmp/
+
+unset PYTHONPATH
+
+virtualenv test-umfpack
+
+cd test-umfpack
+source bin/activate
+
+pip install nose numpy scipy
+pip install --pre -i https://testpypi.python.org/pypi scikit-umfpack
+
+nosetests -v scikits.umfpack
+
+deactivate
+</pre></div>
+</div>
+</li>
+<li><p class="first">Upload to <a class="reference external" href="https://pypi.python.org/pypi">pypi</a>:</p>
+<ul>
+<li><p class="first">Check the version numbers in <tt class="docutils literal"><span class="pre">setup.py</span></tt> and <tt class="docutils literal"><span class="pre">docs/conf.py</span></tt></p>
+</li>
+<li><p class="first">Do:</p>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py sdist
+twine upload dist/scikit-umfpack-&lt;version&gt;.tar.gz
+</pre></div>
+</div>
+</li>
+<li><p class="first">For testing, see the previous step.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">Update gh-pages:</p>
+<div class="highlight-python"><div class="highlight"><pre>./docs/do-gh-pages.sh
+git push -f origin gh-pages
+</pre></div>
+</div>
+</li>
+<li><p class="first">If wheels are available for the released version, upload them also using
+<a class="reference external" href="https://pypi.python.org/pypi/twine">twine</a>.</p>
+</li>
+</ol>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="develop.html" title="Development"
+             >previous</a> |</li>
+        <li><a href="index.html">scikits.umfpack 0.2.3 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Robert Cimrman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

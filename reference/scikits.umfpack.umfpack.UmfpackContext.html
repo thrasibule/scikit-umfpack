@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scikits.umfpack.umfpack.UmfpackContext &mdash; scikits.umfpack 0.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="scikits.umfpack 0.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Low-level interface to UMFPACK" href="../umfpack.html" />
+    <link rel="next" title="scikits.umfpack.umfpack.UmfpackContext.__call__" href="scikits.umfpack.umfpack.UmfpackContext.__call__.html" />
+    <link rel="prev" title="scikits.umfpack.umfpack.UmfpackContext.report_info" href="scikits.umfpack.umfpack.UmfpackContext.report_info.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scikits.umfpack.umfpack.UmfpackContext.__call__.html" title="scikits.umfpack.umfpack.UmfpackContext.__call__"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scikits.umfpack.umfpack.UmfpackContext.report_info.html" title="scikits.umfpack.umfpack.UmfpackContext.report_info"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">scikits.umfpack 0.2.3 documentation</a> &raquo;</li>
+          <li><a href="../umfpack.html" accesskey="U">Low-level interface to UMFPACK</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="scikits-umfpack-umfpack-umfpackcontext">
+<h1>scikits.umfpack.umfpack.UmfpackContext<a class="headerlink" href="#scikits-umfpack-umfpack-umfpackcontext" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="scikits.umfpack.umfpack.UmfpackContext">
+<em class="property">class </em><tt class="descclassname">scikits.umfpack.umfpack.</tt><tt class="descname">UmfpackContext</tt><big>(</big><em>family='di'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#scikits.umfpack.umfpack.UmfpackContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>UMFPACK solver context</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>family</strong> : {&#8216;di&#8217;, &#8216;dl&#8217;, &#8216;zi&#8217;, &#8216;zl&#8217;}</p>
+<blockquote>
+<div><p>Family of UMFPACK functions</p>
+</div></blockquote>
+<p><strong>maxCond</strong> : float, optional</p>
+<blockquote class="last">
+<div><p>If estimated condition number is greater than maxCond,
+a warning is issued (default: 1e12)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.__call__.html#scikits.umfpack.umfpack.UmfpackContext.__call__" title="scikits.umfpack.umfpack.UmfpackContext.__call__"><tt class="xref py py-obj docutils literal"><span class="pre">__call__</span></tt></a>(sys,&nbsp;mtx,&nbsp;rhs[,&nbsp;autoTranspose])</td>
+<td>Uses solve() or linsolve() depending on the presence of the Numeric object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.solve.html#scikits.umfpack.umfpack.UmfpackContext.solve" title="scikits.umfpack.umfpack.UmfpackContext.solve"><tt class="xref py py-obj docutils literal"><span class="pre">solve</span></tt></a>(sys,&nbsp;mtx,&nbsp;rhs[,&nbsp;autoTranspose])</td>
+<td>Solution of system of linear equation using the Numeric object.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.linsolve.html#scikits.umfpack.umfpack.UmfpackContext.linsolve" title="scikits.umfpack.umfpack.UmfpackContext.linsolve"><tt class="xref py py-obj docutils literal"><span class="pre">linsolve</span></tt></a>(sys,&nbsp;mtx,&nbsp;rhs[,&nbsp;autoTranspose])</td>
+<td>One-shot solution of system of linear equation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.lu.html#scikits.umfpack.umfpack.UmfpackContext.lu" title="scikits.umfpack.umfpack.UmfpackContext.lu"><tt class="xref py py-obj docutils literal"><span class="pre">lu</span></tt></a>(mtx)</td>
+<td>Perform LU decomposition.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.numeric.html#scikits.umfpack.umfpack.UmfpackContext.numeric" title="scikits.umfpack.umfpack.UmfpackContext.numeric"><tt class="xref py py-obj docutils literal"><span class="pre">numeric</span></tt></a>(mtx)</td>
+<td>Perform numeric object (LU decomposition) computation using the symbolic decomposition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.symbolic.html#scikits.umfpack.umfpack.UmfpackContext.symbolic" title="scikits.umfpack.umfpack.UmfpackContext.symbolic"><tt class="xref py py-obj docutils literal"><span class="pre">symbolic</span></tt></a>(mtx)</td>
+<td>Perform symbolic object (symbolic LU decomposition) computation for a given sparsity pattern.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.free.html#scikits.umfpack.umfpack.UmfpackContext.free" title="scikits.umfpack.umfpack.UmfpackContext.free"><tt class="xref py py-obj docutils literal"><span class="pre">free</span></tt></a>()</td>
+<td>Free all data</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.free_numeric.html#scikits.umfpack.umfpack.UmfpackContext.free_numeric" title="scikits.umfpack.umfpack.UmfpackContext.free_numeric"><tt class="xref py py-obj docutils literal"><span class="pre">free_numeric</span></tt></a>()</td>
+<td>Free numeric data</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.free_symbolic.html#scikits.umfpack.umfpack.UmfpackContext.free_symbolic" title="scikits.umfpack.umfpack.UmfpackContext.free_symbolic"><tt class="xref py py-obj docutils literal"><span class="pre">free_symbolic</span></tt></a>()</td>
+<td>Free symbolic data</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.report_symbolic.html#scikits.umfpack.umfpack.UmfpackContext.report_symbolic" title="scikits.umfpack.umfpack.UmfpackContext.report_symbolic"><tt class="xref py py-obj docutils literal"><span class="pre">report_symbolic</span></tt></a>()</td>
+<td>Print information about the symbolic object.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.report_numeric.html#scikits.umfpack.umfpack.UmfpackContext.report_numeric" title="scikits.umfpack.umfpack.UmfpackContext.report_numeric"><tt class="xref py py-obj docutils literal"><span class="pre">report_numeric</span></tt></a>()</td>
+<td>Print information about the numeric object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.report_control.html#scikits.umfpack.umfpack.UmfpackContext.report_control" title="scikits.umfpack.umfpack.UmfpackContext.report_control"><tt class="xref py py-obj docutils literal"><span class="pre">report_control</span></tt></a>()</td>
+<td>Print control values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="scikits.umfpack.umfpack.UmfpackContext.report_info.html#scikits.umfpack.umfpack.UmfpackContext.report_info" title="scikits.umfpack.umfpack.UmfpackContext.report_info"><tt class="xref py py-obj docutils literal"><span class="pre">report_info</span></tt></a>()</td>
+<td>Print all status information.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scikits.umfpack.umfpack.UmfpackContext.__call__.html" title="scikits.umfpack.umfpack.UmfpackContext.__call__"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scikits.umfpack.umfpack.UmfpackContext.report_info.html" title="scikits.umfpack.umfpack.UmfpackContext.report_info"
+             >previous</a> |</li>
+        <li><a href="../index.html">scikits.umfpack 0.2.3 documentation</a> &raquo;</li>
+          <li><a href="../umfpack.html" >Low-level interface to UMFPACK</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Robert Cimrman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

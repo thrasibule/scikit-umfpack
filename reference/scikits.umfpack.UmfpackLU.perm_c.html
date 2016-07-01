@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scikits.umfpack.UmfpackLU.perm_c &mdash; scikits.umfpack 0.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="scikits.umfpack 0.2.3 documentation" href="../index.html" />
+    <link rel="up" title="scikits.umfpack.UmfpackLU" href="scikits.umfpack.UmfpackLU.html" />
+    <link rel="next" title="scikits.umfpack.UmfpackLU.perm_r" href="scikits.umfpack.UmfpackLU.perm_r.html" />
+    <link rel="prev" title="scikits.umfpack.UmfpackLU.nnz" href="scikits.umfpack.UmfpackLU.nnz.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scikits.umfpack.UmfpackLU.perm_r.html" title="scikits.umfpack.UmfpackLU.perm_r"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scikits.umfpack.UmfpackLU.nnz.html" title="scikits.umfpack.UmfpackLU.nnz"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">scikits.umfpack 0.2.3 documentation</a> &raquo;</li>
+          <li><a href="../interface.html" >Easy-to-use UMFPACK interface</a> &raquo;</li>
+          <li><a href="scikits.umfpack.UmfpackLU.html" accesskey="U">scikits.umfpack.UmfpackLU</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="scikits-umfpack-umfpacklu-perm-c">
+<h1>scikits.umfpack.UmfpackLU.perm_c<a class="headerlink" href="#scikits-umfpack-umfpacklu-perm-c" title="Permalink to this headline">¶</a></h1>
+<dl class="attribute">
+<dt id="scikits.umfpack.UmfpackLU.perm_c">
+<tt class="descclassname">UmfpackLU.</tt><tt class="descname">perm_c</tt><a class="headerlink" href="#scikits.umfpack.UmfpackLU.perm_c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Permutation Pc represented as an array of indices.</p>
+<p>The column permutation matrix can be reconstructed via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Pc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Pc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">perm_c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scikits.umfpack.UmfpackLU.perm_r.html" title="scikits.umfpack.UmfpackLU.perm_r"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scikits.umfpack.UmfpackLU.nnz.html" title="scikits.umfpack.UmfpackLU.nnz"
+             >previous</a> |</li>
+        <li><a href="../index.html">scikits.umfpack 0.2.3 documentation</a> &raquo;</li>
+          <li><a href="../interface.html" >Easy-to-use UMFPACK interface</a> &raquo;</li>
+          <li><a href="scikits.umfpack.UmfpackLU.html" >scikits.umfpack.UmfpackLU</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Robert Cimrman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

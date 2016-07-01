@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &mdash; scikits.umfpack 0.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="scikits.umfpack 0.2.3 documentation" href="index.html" />
+    <link rel="next" title="Easy-to-use UMFPACK interface" href="interface.html" />
+    <link rel="prev" title="scikit-umfpack" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="interface.html" title="Easy-to-use UMFPACK interface"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="scikit-umfpack"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">scikits.umfpack 0.2.3 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>This package uses distutils, which is the default way of installing python
+modules. In the directory scikit-umfpack (the same as the file you are reading
+now) do:</p>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py install
+</pre></div>
+</div>
+<p>or for a local installation:</p>
+<div class="highlight-python"><div class="highlight"><pre>python setup.py install --root=&lt;DIRECTORY&gt;
+</pre></div>
+</div>
+<p>Example site.cfg entry for UMFPACK v4.4 in &lt;dir&gt;:</p>
+<div class="highlight-python"><div class="highlight"><pre>[amd]
+library_dirs = &lt;dir&gt;/UMFPACK/AMD/Lib
+include_dirs = &lt;dir&gt;/UMFPACK/AMD/Include
+amd_libs = amd
+
+[umfpack]
+library_dirs = &lt;dir&gt;/UMFPACK/UMFPACK/Lib
+include_dirs = &lt;dir&gt;/UMFPACK/UMFPACK/Include
+umfpack_libs = umfpack
+
+UMFPACK v5.0 (as part of UFsparse package) in &lt;dir&gt;:
+
+[amd]
+library_dirs = &lt;dir&gt;/UFsparse/AMD/Lib
+include_dirs = &lt;dir&gt;/UFsparse/AMD/Include, &lt;dir&gt;/UFsparse/UFconfig
+amd_libs = amd
+
+[umfpack]
+library_dirs = &lt;dir&gt;/UFsparse/UMFPACK/Lib
+include_dirs = &lt;dir&gt;/UFsparse/UMFPACK/Include, &lt;dir&gt;/UFsparse/UFconfig
+umfpack_libs = umfpack
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="interface.html" title="Easy-to-use UMFPACK interface"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="scikit-umfpack"
+             >previous</a> |</li>
+        <li><a href="index.html">scikits.umfpack 0.2.3 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Robert Cimrman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
